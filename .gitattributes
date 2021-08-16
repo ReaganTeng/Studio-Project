@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+$ git remote -v
+> origin  https://github.com/tzejan/SP1Framework (fetch)
+> origin  https://github.com/tzejan/SP1Framework (push)
+
+
+$ git remote add upstream https://github.com/tzejan/SP1Framework
+
+$ git remote -v
+> origin    https://github.com/tzejan/SP1Framework (fetch)
+> origin    https://github.com/tzejan/SP1Framework (push)
+> upstream  https://github.com/tzejan/SP1Framework (fetch)
+> upstream  https://github.com/tzejan/SP1Framework (push)
