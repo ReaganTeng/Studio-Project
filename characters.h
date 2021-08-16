@@ -7,9 +7,7 @@ using namespace std;
 
 
 class Player {
-public:
-	Player();
-	~Player();
+private:
 	int level;
 	int pClass;
 	int maxHp;//his max hp
@@ -18,6 +16,31 @@ public:
 	int currMp;//current MP(same as max mp)
 	string name;
 	int currMap;//map number
+
+
+
+public:
+	Player();
+	~Player();
+
+	void SetLevel(int num);
+	int GetLevel();
+	void SetMaxHp(int num);
+	int GetMaxHp();
+	void SetCurrHp(int num);
+	int GetCurrHp();
+	void SetMaxMp(int num);
+	int GetMaxMp();
+	void SetCurrMp(int num);
+	int GetCurrMp();
+	void SetClass(int num);
+	int GetClass();
+	void SetName(string input);
+	string GetName();
+	void SetMap(int num);
+	int GetMap();
+
+
 	int getRandomInt(int min, int max);
 	void initaliseStats();
 	struct Map
