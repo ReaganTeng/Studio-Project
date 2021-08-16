@@ -1,14 +1,11 @@
 #pragma once
-class Map
-{
+class Map {
 private:
-	int map_height;
-
-	int map_width;
-
+	char arr[40][20];
 public:
-	Map(void);
-	void print_map(void);
-	~Map(void);
+	Map();
+	~Map();
+	char GetGrid(int x, int y);
+	void SetGrid(int x, int y, char entity);
+	void display(void);
 };
-
