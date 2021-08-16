@@ -3,8 +3,8 @@
 
 Entities::Entities(void)
 {
-	posY = 1;
-	posX = 1;
+	posY = 3;
+	posX = 3;
 
 	character = 'C';
 }
@@ -16,9 +16,14 @@ void Entities::set_position(int x, int y)
 	posY = y;
 }
 
-int Entities::get_position(void)
+int Entities::get_x_position(void)
 {
 	return posX;
+	
+}
+
+int Entities::get_y_position(void)
+{
 	return posY;
 }
 
@@ -28,15 +33,10 @@ void Entities::setting_entity(void)
 	{
 		for (int j = 0; j < 20; j++)
 		{
-			if (i == posY && j == posX)
+			if (j == get_x_position() && i == get_y_position())
 			{
 				std::cout << character;
 			}
-			else
-			{
-				std::cout << " ";
-			}
-			
 		}
 	}
 }
@@ -64,6 +64,32 @@ void Entities::movement(int direction, int input)
 	{
 		posX = posX + direction;
 		setting_entity();
+	}
+}
+
+//entities* enitity means another entity, not the player
+void Entities::collide(Entities* entity, int how_much_apart, int input)
+{
+	//if another entity is at the player's left by 2 grids and player decided to go left
+	if (posX - entity -> posX == 2 && input == 3)
+	{
+		delete entity;
+
+	}
+	//if another entity is at the player's right by 2 grids and player decided to go right
+	else if (posX - entity->posX == -2 && input == 4)
+	{
+		delete entity;
+	}
+	//if another entity is at the player's below by 2 grids and player decided to go down
+	else if (posY - entity->posY == 2 && input == 1)
+	{
+		delete entity;
+	}
+	//if another entity is at the player's up by 2 grids and player decided to go up
+	else if (posY - entity->posY == -2 && input == 2)
+	{
+		delete entity;
 	}
 }
 
