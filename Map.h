@@ -1,7 +1,7 @@
 #pragma once
 class Map {
 private:
-	char arr[40][40];
+	char arr[120][120];
 public:
 	Map();
 	~Map();

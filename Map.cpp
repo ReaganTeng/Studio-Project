@@ -3,8 +3,8 @@
 #include <string>
 using namespace std;
 Map::Map() {
-	for (int i = 0; i < 40; i++) { // to make the horizontal axis
-		for (int j = 0; j < 40; j++) {//vertical axis
+	for (int i = 0; i < 120; i++) { // to make the horizontal axis
+		for (int j = 0; j < 120; j++) {//vertical axis
 			arr[i][j] = ' ';//make map empty so that entity spawn will be clear
 
 		}
@@ -22,10 +22,10 @@ void Map::SetGrid(int x, int y, char entity) {
 	arr[x][y] = entity;//placing entity in the empty spot found
 }
 void Map::display(void) {
-	int row = 40;
-	int col = 40;
-	string UI = "########################################";// for map indication (UI)
-	cout<< " "<< UI << endl;//horizontal axis
+	int row = 120;
+	int col = 120;
+	string UI = "########################################################################################################################";// for map indication (UI)
+	cout<< " " << UI << endl;//horizontal axis
 	for (int i = 0; i < row; i++) {
 		cout << UI[i];
 		for (int j = 0; j < col; j++) { // vertical axis
