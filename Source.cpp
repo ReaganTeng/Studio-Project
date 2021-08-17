@@ -19,7 +19,7 @@ int main(void)
 	int enemy_x = 1;
 	int enemy_y = 3;
 	char enemy_character = 'E';
-	
+
 
 	entity[0] = new Player;
 	entity[0]->set_position(player_x, player_y, player_character);
@@ -40,7 +40,7 @@ int main(void)
 			input == 3 ||
 			input == 4)
 		{
-			
+
 			entity[0]->movement(player_x, player_y, player_character, input, 1);
 		}
 
@@ -65,4 +65,68 @@ int main(void)
 			std::cout << "collided";
 		}
 	}
+bool TBB(Player& player,Maps& maps,Mobs mobs)//turn based battle
+{
+	//spwan enemy based on current mmap
+	Mobs::mob enemy;
+	enemy = mobs.determineMonster(int mapZone);
+//determins what gets spwanned
+	cout <<enemy;//check
+	//selectbackground(tbd later)
+
+	//load health,enemy and message box
+	cout << "x";//mob voice line
+	bool playerlost = false
+  int mouseX = 0;
+	int mouseY = 0;
+	//vector <int> buttonXcombat
+	//vector <int> buttonYcombat
+	//int combatButtonHeight;
+	//int combatButtonWidth;
+	//do keyboard/mouse stuff from framework
+
+	int calculateDamageDealt(int attack, int defence)//attack = total attack vise versa
+	{int damageDealt = attack - defence;
+		if (damageDealt <=0)
+		{
+			damageDealt = 1;
+
+		}//to prevent - damage in calculation later
+		return demageDealt;
+	 }
+
+
+
+	int calculateDamageTaken(int attack, int defence,int damageDealt)
+ {int damageTaken = attack - defence;//for mob i think i coded all the same for the names
+ int damageTaken = attack - defence;
+ if (damgeTaken <= 0){
+	 demageTaken = 1;
+ }
+ return damageTaken
+
+int finalHp(int currHP,int damageTaken)
+{int finalHp = currHp - damageTaken;
+	/*if (finalHp = <=0)
+	{
+		quit;
+	}*/
+	//i dk how u wanna do this so yeah
+
+
+
+
+}
+
+
+
+ }
+
+
+}
+
+
+
+
+
 }
