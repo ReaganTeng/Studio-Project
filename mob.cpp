@@ -45,7 +45,7 @@ Mobs::Mobs() {
 	mobGoblinMage.itemDrop = 2;
 	mobGoblinMage.goldDrop = 250;
 	*/
-	
+
 
 }
 Mobs::~Mobs()
@@ -95,7 +95,7 @@ Mobs::mob Mobs::determineMonster(int mapZone) {//determines monster spawn(not su
 			generateEnemyStats(monster);
 			break;
 		}
-		break;
+		return monster;
 
 
 
