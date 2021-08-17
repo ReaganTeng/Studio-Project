@@ -13,7 +13,10 @@ SKeyEvent g_skKeyEvent[K_COUNT];
 SMouseEvent g_mouseEvent;
 
 // Game specific variables here
+
+//VARIABLE FOR GAME CHARACTER ( Reagan)
 SGameChar   g_sChar;
+
 EGAMESTATES g_eGameState = S_SPLASHSCREEN; // initial state
 
 // Console object
@@ -34,9 +37,13 @@ void init( void )
     // sets the initial state for the game
     g_eGameState = S_SPLASHSCREEN;
 
+
+    //SET COORDINATES OF THE CHARACTER (Reagan)
+   
     g_sChar.m_cLocation.X = g_Console.getConsoleSize().X / 2;
     g_sChar.m_cLocation.Y = g_Console.getConsoleSize().Y / 2;
     g_sChar.m_bActive = true;
+
     // sets the width, height and the font name to use in the console
     g_Console.setConsoleFont(0, 16, L"Consolas");
 
@@ -227,6 +234,8 @@ void updateGame()       // gameplay logic
                         // sound can be played here too.
 }
 
+
+//MOVE THE CHARACTER, g_sChar is the character (Reagan)
 void moveCharacter()
 {    
     // Updating the location of the character based on the key release
@@ -300,6 +309,9 @@ void renderToScreen()
     g_Console.flushBufferToConsole();
 }
 
+
+
+//START MENU OF THE GAME(Reagan)
 void renderSplashScreen()  // renders the splash screen
 {
     COORD c = g_Console.getConsoleSize();
@@ -313,6 +325,7 @@ void renderSplashScreen()  // renders the splash screen
     c.X = g_Console.getConsoleSize().X / 2 - 9;
     g_Console.writeToBuffer(c, "Press 'Esc' to quit", 0x09);
 }
+
 
 void renderGame()
 {
@@ -338,6 +351,7 @@ void renderMap()
     }
 }
 
+//SETS THE CHARACTER(Reagan)
 void renderCharacter()
 {
     // Draw the location of the character
@@ -346,7 +360,9 @@ void renderCharacter()
     {
         charColor = 0x0A;
     }
-    g_Console.writeToBuffer(g_sChar.m_cLocation, (char)1, charColor);
+
+    //this decides what the character the main character will display (Reagan)
+    g_Console.writeToBuffer(g_sChar.m_cLocation, (char)100, charColor);
 }
 
 void renderFramerate()
